@@ -1,0 +1,25 @@
+{
+    "env": {
+        "commonjs": true,
+        "es2021": true,
+        "node": true
+    },
+    "extends": "standard",
+    "overrides": [
+    ],
+    "parserOptions": {
+        "ecmaVersion": "latest"
+    },
+    "rules": {
+        "quotes": "off",
+        "semi": "off",
+        "indent": "off",
+        "padded-blocks":"off",
+        "eol-last":"off",
+        "no-unneeded-ternary":"off",
+        "no-multiple-empty-lines":"off",
+        "no-trailing-spaces":"off",
+        "space-before-blocks":"off",
+        "no-extra-parens":"off"
+    }
+}
