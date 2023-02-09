@@ -19,6 +19,7 @@ const addBookHandler = (request, h) => {
     const updatedAt = insertedAt;
 
     const newBook = {
+        id,
         name,
         year,
         author,
@@ -26,25 +27,33 @@ const addBookHandler = (request, h) => {
         publisher,
         pageCount,
         readPage,
-        reading,
-        id,
         finished,
+        reading,
         insertedAt,
         updatedAt
     };
-    
-    const noName = ((newBook) => {
-        return newBook.name === `` ? true : false;
-    });
 
-    if (noName){
+
+    if (newBook.name === undefined){
         const response = h.response({
             status: `fail`,
             message: `Gagal menambahkan buku. Mohon isi nama buku`
+
         });
         response.code(400);
         return response;
     };
+
+    if (newBook.readPage > newBook.pageCount){
+        const response = h.response({
+            status: `fail`,
+            message: `Gagal menambahkan buku. readPage tidak boleh lebih besar dari pageCount`
+
+        });
+        response.code(400);
+        return response;
+    };
+    
 
     books.push(newBook);
 
@@ -64,7 +73,7 @@ const addBookHandler = (request, h) => {
     };
 
     const response = h.response({
-        status: `fail`,
+        status: `error`,
         message: `Buku gagal ditambahkan`
     });
     response.code(500);
