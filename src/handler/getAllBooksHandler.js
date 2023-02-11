@@ -12,28 +12,12 @@ const getAllBooksHandler = (request, h) => {
         }
     }
     
-    const nameIsExist = name !== undefined;
-    const readingIsExist = reading !== undefined;
-    const finishedIsExist = finished !== undefined;
-    // const isHaveQueryParams = (nameIsExist || readingIsExist || finishedIsExist);
-
     const allBook = [];
     const allBookFiltered = [];
 
-    // if (isHaveQueryParams === false) {
-    //     books.forEach((book) => {
-    //         const id = book.id;
-    //         const name = book.name;
-    //         const publisher = book.publisher;
-    
-    //         const newBook = {
-    //             id,
-    //             name,
-    //             publisher
-    //         }
-    //         allBook.push(newBook);
-    //     });
-    // }
+    const nameIsExist = name !== undefined;
+    const readingIsExist = reading !== undefined;
+    const finishedIsExist = finished !== undefined;
 
     if (nameIsExist){
         const filteredBooks = books.filter((book) => book.name.toLowerCase().includes(name.toLowerCase()));
