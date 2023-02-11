@@ -20,6 +20,7 @@
         "no-multiple-empty-lines":"off",
         "no-trailing-spaces":"off",
         "space-before-blocks":"off",
-        "no-extra-parens":"off"
+        "no-extra-parens":"off",
+        "eqeqeq":"off"
     }
 }
